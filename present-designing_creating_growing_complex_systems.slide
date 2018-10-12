@@ -25,17 +25,57 @@ siuyin@beyondbroadcast.com
 
 - Output: Community standing (Eg. improved status / worsened status)
 
-* Simple software: An individual function
+* Simple software: An individual worker
 
 .play -edit simple/hello/main.go
 
-This software function:
+This software worker:
 
 Speaks Go Standard Library
 Asks the _fmt_ standard library function to print "hello Go!"
 
-A simple function is a generalist that knows how to use the language's standard library.
+A simple worker is a generalist that knows how to use the language's standard library.
 
 ---
 
 An example of a human generalist is a clerk working in a bureaucracy.
+
+* Specialist skills
+
+.code skill/engineer/engineer.go
+
+This package of engineering skill knows about building bridges and paving roads.
+These skills are well-known and hence have capitalized names in Go.
+
+We can place this specilist code in a software repository. Eg. https://github.com/siuyin/engineer
+
+* A capable worker
+
+- Has a library of skills he has developed
+- But is still an individual contributor
+
+.play -edit simple/capable/main.go
+
+* A specialist worker
+
+Is a capable worker who can call upon a specialist skill(s) not present in the standard library.
+
+.code simple/specialist/main.go
+
+He is still an individual contributor.
+
+* Complex Software Systems
+
+* A Complex Software System
+
+- Is a community of software workers
+- It comprises generalist and / or specialists workers
+- These workers have varying capabilities and thier associated creation and maintenance costs.
+
+---
+
+Software Architecture is the organisation of these software workers, such that:
+
+- The goal(s) of the System is met.
+- The system can (easily) change to meet emerging goals.
+
