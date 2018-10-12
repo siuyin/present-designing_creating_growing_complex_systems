@@ -47,7 +47,7 @@ An example of a human generalist is a clerk working in a bureaucracy.
 This package of engineering skill knows about building bridges and paving roads.
 These skills are well-known and hence have capitalized names in Go.
 
-We can place this specilist code in a software repository. Eg. https://github.com/siuyin/engineer
+We can place this specialist code in a software repository. Eg. https://github.com/siuyin/engineer
 
 * A capable worker
 
@@ -79,3 +79,109 @@ Software Architecture is the organisation of these software workers, such that:
 - The goal(s) of the System is met.
 - The system can (easily) change to meet emerging goals.
 
+* Organisation of software workers
+
+* Human organisation structures
+
+- Heirachical
+- Collegial
+- Cross-functional
+- Project-based (Gotong Royong)
+- Functional / Specialists
+
+---
+
+- Companies / Start-ups
+- Societies / Guilds / Clubs
+- Race / Religion
+- Governments / Nations / States
+
+* Software organisation structures
+
+- Monoliths
+- Microservices
+- Service Oriented Architecture
+- Software Libraries / Repositories
+
+---
+
+- Hard coded software
+- Machine learning software
+- Single-purpose software
+- Multi-faceted software (eg. Busybox)
+
+* What is "success"
+
+- Human communities: community feels good
+- Good leader
+- Foresight / planning
+- Able to make hard decisions
+
+---
+
+- Software systems: software fulfils purpose
+- Readable
+- Maintainable
+- Extensible
+
+* Business 101
+
+- Responsibility / Accountability => Goals
+
+---
+
+- Specific
+- Measurable
+- Actionable
+- Realistic
+- Time-bound
+
+* Organise by Resposibilities / Roles
+
+- Human Responsibilities / Roles
+- Board, CEO, CFO, CTO, other senior management etc
+- Engineering, Operations, Development, Finance etc.
+- XYZ product team / team lead
+
+---
+
+- Software Responsibility / Roles
+- Frontend(s) / UI
+- Customer (management)
+- Order (management)
+- Fulfillment (management)
+
+* Implementing Responsibilities / Roles
+
+- In a (human) start-up, CTO, CFO, Developer, Accountant may be handled by one person.
+- A large enterprise may have a CTO and 200 developers.
+
+---
+
+- In a (software) start-up, all responsibilities and roles may be handled by one deployable, executable software artifact -- a monolith.
+- A large software system may have tens of supporting services behind the main Customer service (module).
+
+---
+
+A set of deployables fulfill a reponsibility or role.
+The responsibility or role is a hazy abstract concept. The deployable(s) implement that concept.
+
+* Deployables
+
+* Good human deployables / people / employees
+
+- Independent worker
+- Reliable
+- Innovative
+- Good communicator
+- Skillful / competent (appropriate to the role / responsibility)
+- Experienced (has learned well from exposure to past data)
+
+* Good software deployables
+
+- Independently deployable
+- Single Responsibility
+- Strong cohesion
+- Well defined interface to facilitate substitution / replacecability
+- Low dependency count (reports to a single master / supervisor / manager)
+- High performance / low latency

@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	fmt.Print(engr.BuildBridge(30))
-	fmt.Print(engr.PaveRoad(4, 5000))
+	fmt.Println(engr.BuildBridge(30))
+	fmt.Println(engr.PaveRoad(4, 5000))
 }
