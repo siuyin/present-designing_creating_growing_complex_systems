@@ -270,13 +270,13 @@ Here we see the concept of Shared Space and Dedicated Space.
 
 Imagine the service counter of a large organisation. It is the public interface to the rest of the organisation's "backend". There are shared facilities and also areas dedicated to specialist counter staff.
 
-* Presentation / Frontend
+* Presentation / Frontend: Main Screen
 
 .code cmd/adder/main.go /50 O/,/60 O/
 
 Can you point out the shared and dedicated areas?
 
-* Presentation / Frontend 2
+* Presentation / Frontend 2: Adder User Interface
 
 file: cmd/adder/adder.go
 
@@ -284,10 +284,36 @@ file: cmd/adder/adder.go
 
 This file is dedicated to the Adder responsibility but sits with package main.
 
-* Presentation / Frontend 3
+* Presentation / Frontend 3: UI Implementation
 
 .code cmd/adder/main.go /10 O/,/20 O/
 .code cmd/adder/main.go /70 O/,/80 O/
 
 Here the mainSreen (shared) is rendered along with adderForm (dedicated).
 
+* Presentation / Frontend 4: Adder UI interaction
+
+file: cmd/adder/static/js/adder.js
+.code cmd/adder/static/js/adder.js
+
+This file is dedicated to the Adder responsibility.
+
+* Demo: Let's see this in action.
+
+  cd cmd/adder
+  go run *.go
+
+Point browser at 127.0.0.1:8080
+
+* Critique: You've created a non-scalable monolith!
+
+Looks like Ruby-on-Rails without the nice generators!
+
+This is not microservices - the separate components are not independently deployable!
+
+---
+*Response:*
+
+Ruby-on-Rails is a relevant, very productive framework. There are scalability issues but most of us do not operate at Google or Facebook scale.
+
+Let's take a closer look at "independently deployable"...

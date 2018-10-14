@@ -14,6 +14,5 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     req.open("GET","/adder?a="+a.value+"&b="+b.value);
     req.send();
-
   };
 });
