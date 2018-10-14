@@ -44,10 +44,11 @@ An example of a human generalist is a clerk working in a bureaucracy.
 
 .code skill/engineer/engineer.go
 
-This package of engineering skill knows about building bridges and paving roads.
+This package of engineering skills knows about building bridges and paving roads.
 These skills are well-known and hence have capitalized names in Go.
 
-We can place this specialist code in a software repository. Eg. https://github.com/siuyin/present-designing_creating_growing_complex_systems
+I have placed this specialist code in a software repository.
+.link https://github.com/siuyin/present-designing_creating_growing_complex_systems
 
 * A capable worker
 
@@ -136,7 +137,7 @@ Software Architecture is the organisation of these software workers, such that:
 - Realistic
 - Time-bound
 
-* Organise by Resposibilities / Roles
+* Organise by Responsibilities / Roles
 
 - Human Responsibilities / Roles
 - Board, CEO, CFO, CTO, other senior management etc
@@ -164,7 +165,7 @@ Software Architecture is the organisation of these software workers, such that:
 ---
 
 A set of deployables fulfill a reponsibility or role.
-The responsibility or role is a hazy abstract concept. The deployable(s) implement that concept.
+The responsibility or role is an abstract concept. The deployable(s) implement that concept.
 
 * Deployables
 
@@ -351,7 +352,7 @@ cmd/adder/static/css (for shared / common style sheets)
 
 ---
 
-How do you feel? Can these teams work independently?
+Can these teams work independently? What do you think?
 
 
 * Yes, but ...
