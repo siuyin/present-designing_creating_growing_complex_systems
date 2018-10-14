@@ -223,4 +223,71 @@ Can we introduce a Multiplier without changes to Frontend and Router ?
 
 Would this be confusing to the users who are confronted with different, potentially inconsistent frontends?
 
-How could we resolve this tension?
+How may we resolve this tension?
+
+* Software Architecture v. Building Architecture
+
+I believe we are confusing software architecture with building architecture.
+
+A building architect imagines different functions / responsibilities of the building and implements them as physical structures.
+These physical structures cannot be changed easily.
+
+I believe a software architect, like a building architect should start with imagining responsibilities.
+
+But,
+stop short of implementing the as software artifacts.
+
+That is the job of Software Engineers.
+
+* Software Engineering
+
+- Given a set of responsibilities (by the Architect)
+- Design an (automated) build of the artifacts (deployables) that implement the responsibilities.
+
+If the build is automated, new, changed, software artifacts can be re-created easily.
+
+This is unlike trying to change a building's physical structures.
+
+* Adder responsibility
+
+.code adder/adder.go /10 O/,/20 O/
+.code adder/adder.go /50 O/,/60 O/
+
+sumStr is a function internal to Adder that adds two strings and returns an integer and an error value.
+
+* Adder responsibility 2
+
+.code adder/adder.go /30 O/,/40 O/
+
+AdderHandler is a well-known (exported) function that a specialist software workers can draw upon.
+
+* Main Lobby / Router
+
+.code cmd/adder/main.go /10 O/,/20 O/
+.code cmd/adder/main.go /30 O/,/40 O/
+
+Here we see the concept of Shared Space and Dedicated Space.
+
+Imagine the service counter of a large organisation. It is the public interface to the rest of the organisation's "backend". There are shared facilities and also areas dedicated to specialist counter staff.
+
+* Presentation / Frontend
+
+.code cmd/adder/main.go /50 O/,/60 O/
+
+Can you point out the shared and dedicated areas?
+
+* Presentation / Frontend 2
+
+file: cmd/adder/adder.go
+
+.code cmd/adder/adder.go
+
+This file is dedicated to the Adder responsibility but sits with package main.
+
+* Presentation / Frontend 3
+
+.code cmd/adder/main.go /10 O/,/20 O/
+.code cmd/adder/main.go /70 O/,/80 O/
+
+Here the mainSreen (shared) is rendered along with adderForm (dedicated).
+
