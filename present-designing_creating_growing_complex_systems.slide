@@ -47,7 +47,7 @@ An example of a human generalist is a clerk working in a bureaucracy.
 This package of engineering skill knows about building bridges and paving roads.
 These skills are well-known and hence have capitalized names in Go.
 
-We can place this specialist code in a software repository. Eg. https://github.com/siuyin/engineer
+We can place this specialist code in a software repository. Eg. https://github.com/siuyin/present-designing_creating_growing_complex_systems
 
 * A capable worker
 
@@ -60,7 +60,7 @@ We can place this specialist code in a software repository. Eg. https://github.c
 
 Is a capable worker who can call upon a specialist skill(s) not present in the standard library.
 
-.code simple/specialist/main.go
+.play -edit simple/specialist/main.go
 
 He is still an individual contributor.
 
@@ -185,3 +185,42 @@ The responsibility or role is a hazy abstract concept. The deployable(s) impleme
 - Well defined interface to facilitate substitution / replacecability
 - Low dependency count (reports to a single master / supervisor / manager)
 - High performance / low latency
+
+* Complex worked example
+
+* Complex
+
+This example will be a webapp that adds two whole numbers (integers).
+
+It is complex because it comprises more than one piece.
+
+- Frontend -- the web interface
+- Routing logic, routing web requests to the appropriate backend code
+- Backend code, implementing the adding function
+
+In short we will be implementing a Model, View, Controller architecture.
+
+
+* Step 1: Naming responsibilities / roles
+
+- Frontend -- interacts with users and outside world requests
+- Main Lobby / Router -- connects requests to the appropriate backend worker
+- Adder -- the worker that adds two integers
+
+---
+
+Adder is clearly a responsibility. Imagine a Multiplier responsibility to be added.
+
+But what about Frontend and Main Lobby / Router ?
+Their responsibility boundaries seem unclear to me.
+Can we introduce a Multiplier without changes to Frontend and Router ?
+
+* Should we just have one responsibility? Adder?
+
+- Should Adder handle its own frontend and routing?
+
+- When Multiplier is added it also handles its own frontend and routing.
+
+Would this be confusing to the users who are confronted with different, potentially inconsistent frontends?
+
+How could we resolve this tension?

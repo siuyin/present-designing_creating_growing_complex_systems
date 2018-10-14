@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	engr "github.com/siuyin/engineer"
+	engr "github.com/siuyin/present-designing_creating_growing_complex_systems/skill/engineer"
 )
 
 func main() {
