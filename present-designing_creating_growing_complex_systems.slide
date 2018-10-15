@@ -367,6 +367,64 @@ Can these teams work independently? What do you think?
 
 I believe the key is maintaining discipline across responsibility boundaries. But that is the topic of another talk -- the "Hakka Roundhouse, a microservices ready monolith"
 
+* What if responsibilities change?
+
+Do we rename OldResponsibility to NewResponsibility and modify all the deployables?
+
+or 
+
+Do we archive OldResponsibility, and implement the deployables for NewResponsibility?
+
+* Responsibility changes in complex human systems
+
+When an organisation's department is no longer relevant (eg. typewriter production), do we ?
+
+A. Rename typewriter production to computer production and retrain its workers to make computers?
+
+or 
+
+B. Retire typewrite production, create a new computer production department and hire new workers with the relevant skills?
+
+---
+
+Morally we desire option ....
+
+But
+
+Logically we prefer option ....
+
+* Standard Library and Specialist Libraries to the rescue.
+
+In the software domain it is not a heartless as in the human domain.
+
+Recall general software workers call upon only the Standard Library.
+Less capable general workers get archived and new general workers are created to meet the demands of the new responsibility.
+
+The same with specilist software workers, they remain relevant so long as the skills the use from Specialist Libraries remain relevant.
+
+---
+
+Skills are reused, not workers.
+
+* What if responsibilities grow?
+
+Say computer production now needs to produce mobile phones as well.
+
+Here I feel, upgrading deployables seem intuitive.
+
+But do we "teach an old dog new tricks" or add a puppy with new tricks?
+
+---
+
+If Software Engineer has written software to be pipe-able / composable .
+Eg.
+
+  cat file.txt | grep hello | wc
+
+Add a new puppy into the pipe chain.
+
+If not, teach the old dog new tricks. But be sure to have a safety net by having comprehensive tests.
+
 * Wrap-up
 
 - A key design activity is to define responsibilities / roles.
@@ -376,6 +434,8 @@ I believe the key is maintaining discipline across responsibility boundaries. Bu
 - With automated builds (devops, Continous Integration / Continous Delivery) it is feasible to keep responsibilities (an abstract concept) loosely coupled to software artifacts deployed.
 
 - The ease that this separation can be accomplised depends on the discipline in maintaining boundaries / interfaces between responsibiity area.
+
+- Composable software allow easier growing of responsibilities.
 
 * Code and presentation download
 
