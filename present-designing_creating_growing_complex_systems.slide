@@ -273,7 +273,7 @@ Imagine the service counter of a large organisation. It is the public interface 
 
 * Presentation / Frontend: Main Screen
 
-.code cmd/adder/main.go /50 O/,/60 O/
+.code -numbers cmd/adder/main.go /50 O/,/60 O/
 
 Can you point out the shared and dedicated areas?
 
@@ -295,7 +295,7 @@ Here the mainSreen (shared) is rendered along with adderForm (dedicated).
 * Presentation / Frontend 4: Adder UI interaction
 
 file: cmd/adder/static/js/adder.js
-.code cmd/adder/static/js/adder.js
+.code -numbers cmd/adder/static/js/adder.js
 
 This file is dedicated to the Adder responsibility.
 
