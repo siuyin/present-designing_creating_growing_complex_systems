@@ -61,9 +61,9 @@ func init() {
 
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	if err := mainTpl.Execute(w, struct {
-		AdderForm template.HTML
+		AdderForm template.HTML // declaration // HL
 	}{
-		AdderForm: adderForm,
+		AdderForm: adderForm, // invocation // HL
 	}); err != nil {
 		log.Fatalf("main execute template: %v", err)
 	}
