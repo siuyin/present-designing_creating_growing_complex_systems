@@ -4,10 +4,11 @@ package main
 // 20 OMIT
 
 import (
-	"github.com/siuyin/present-designing_creating_growing_complex_systems/adder"
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/siuyin/present-designing_creating_growing_complex_systems/adder"
 )
 
 // 30 OMIT
@@ -33,6 +34,7 @@ const mainScreen = `
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/static/css/pure-min.css">
+  <link rel="stylesheet" href="/static/css/app.css">
   <title>Adder</title>
 </head>
 
