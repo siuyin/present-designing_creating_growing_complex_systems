@@ -8,7 +8,12 @@ siuyin@beyondbroadcast.com
 
 * Complex Systems
 
-* Simple system: A human individual
+* Simple system
+
+Complex systems are built from simpler parts.
+For example: Human communities are complex systems built from individual humans.
+
+A human has:
 
 - Input: Vision, Sound, Touch, Smell, Taste
 
@@ -17,15 +22,17 @@ siuyin@beyondbroadcast.com
 - Output: Classification task (Eg. feels good / feels bad)
 
 
-* Complex system: A human community
+* Complex system chracteristics
 
-- Input: Interpersonal relationships
+A human community has:
 
-- Processing: Community and Societal norms
+- Input: Interpersonal interactions and relationships
+
+- Processing: Community, societal and cultural norms
 
 - Output: Community standing (Eg. improved status / worsened status)
 
-* Simple software: An individual worker
+* Simple software: An individual software worker
 
 .play -edit simple/hello/main.go
 
@@ -40,6 +47,23 @@ A simple worker is a generalist that knows how to use the language's standard li
 
 An example of a human generalist is a clerk working in a bureaucracy.
 
+* Complex software systems
+
+Complex software system are built from simpler parts (software workers).
+
+These software workers:
+
+- interact with other software workers
+- the system has norms and conventions (language, standard libraries, protocols, timeouts etc.)
+
+and 
+
+- the system gets better or worse as a result of the worker's contribution.
+
+---
+
+Does the system "punish" poor performing sofware workers?
+
 * Specialist skills
 
 .code skill/engineer/engineer.go
@@ -50,10 +74,10 @@ These skills are well-known and hence have capitalized names in Go.
 I have placed this specialist code in a software repository.
 .link https://github.com/siuyin/present-designing_creating_growing_complex_systems
 
-* A capable worker
+* A capable generalist worker
 
 - Has a library of skills he has developed
-- But is still an individual contributor
+- Is an individual contributor who is relatively easy to replace.
 
 .play -edit simple/capable/main.go
 
@@ -63,7 +87,7 @@ Is a capable worker who can call upon a specialist skill(s) not present in the s
 
 .play -edit simple/specialist/main.go
 
-He is still an individual contributor.
+He is an individual contributor that can be hard to replace if the skill(s) he uses are rare.
 
 * Complex Software Systems
 
@@ -102,7 +126,7 @@ Software Architecture is the organisation of these software workers, such that:
 - Monoliths
 - Microservices
 - Service Oriented Architecture
-- Software Libraries / Repositories
+- Software Libraries / Frameworks / Repositories
 
 ---
 
@@ -231,7 +255,7 @@ How may we resolve this tension?
 I believe we are confusing software architecture with building architecture.
 
 A building architect imagines different functions / responsibilities of the building and implements them as physical structures.
-These physical structures cannot be changed easily.
+These physical structures cannot be easily changed.
 
 I believe a software architect, like a building architect should start with imagining responsibilities.
 
@@ -246,15 +270,18 @@ That is the job of Software Engineers.
 - Design an (automated) build of the artifacts (deployables) that implement the responsibilities.
 
 If the build is automated, new, changed, software artifacts can be re-created easily.
+This is the DevOps culture.
 
-This is unlike trying to change a building's physical structures.
+And is unlike trying to change a building's physical structures.
 
-* Adder responsibility
+* Implementing the Adder responsibility
 
 .code adder/adder.go /10 O/,/20 O/
 .code adder/adder.go /50 O/,/60 O/
 
 sumStr is a function internal to Adder that adds two strings and returns an integer and an error value.
+
+In *go* we group similar / related capabilities under a package.
 
 * Adder responsibility 2
 
@@ -269,7 +296,7 @@ AdderHandler is a well-known (exported) function that a specialist software work
 
 Here we see the concept of Shared Space and Dedicated Space.
 
-Imagine the service counter of a large organisation. It is the public interface to the rest of the organisation's "backend". There are shared facilities and also areas dedicated to specialist counter staff.
+Imagine the service counter of a large organisation. It is the public interface to the rest of the organisation's "backend". There are shared facilities and also areas dedicated to specialist counter staff. Should I *walk*through* this code?
 
 * Presentation / Frontend: Main Screen
 
@@ -281,14 +308,14 @@ Can you point out the shared and dedicated areas?
 
 file: cmd/adder/adder.go
 
-.code cmd/adder/adder.go
+.code -numbers cmd/adder/adder.go
 
 This file is dedicated to the Adder responsibility but sits with package main.
 
 * Presentation / Frontend 3: UI Implementation
 
-.code cmd/adder/main.go /10 O/,/20 O/
-.code cmd/adder/main.go /70 O/,/80 O/
+.code -numbers cmd/adder/main.go /10 O/,/20 O/
+.code -numbers cmd/adder/main.go /70 O/,/80 O/
 
 Here the mainSreen (shared) is rendered along with adderForm (dedicated).
 
@@ -369,21 +396,21 @@ I believe the key is maintaining discipline across responsibility boundaries. Bu
 
 * What if responsibilities change?
 
-Do we rename OldResponsibility to NewResponsibility and modify all the deployables?
+Do we _upgrade_ OldResponsibility to NewResponsibility and modify all the deployables?
 
 or 
 
-Do we archive OldResponsibility, and implement the deployables for NewResponsibility?
+Do we archive OldResponsibility, and implement _new_ deployables for NewResponsibility?
 
 * Responsibility changes in complex human systems
 
 When an organisation's department is no longer relevant (eg. typewriter production), do we ?
 
-A. Rename typewriter production to computer production and retrain its workers to make computers?
+A. _Upgrade_ typewriter production to computer production by retraining its workers to make computers?
 
 or 
 
-B. Retire typewrite production, create a new computer production department and hire new workers with the relevant skills?
+B. Retire typewrite production, create a new computer production department and hire _new_ workers with the relevant skills?
 
 ---
 
@@ -395,7 +422,7 @@ Logically we prefer option ....
 
 * Standard Library and Specialist Libraries to the rescue.
 
-In the software domain it is not a heartless as in the human domain.
+The software domain it is not as _heartless_ as in the human domain.
 
 Recall general software workers call upon only the Standard Library.
 Less capable general workers get archived and new general workers are created to meet the demands of the new responsibility.
@@ -405,6 +432,7 @@ The same with specilist software workers, they remain relevant so long as the sk
 ---
 
 Skills are reused, not workers.
+Software skills are held in libraries.
 
 * What if responsibilities grow?
 
@@ -433,7 +461,7 @@ If not, teach the old dog new tricks. But be sure to have a safety net by having
 
 - With automated builds (devops, Continous Integration / Continous Delivery) it is feasible to keep responsibilities (an abstract concept) loosely coupled to software artifacts deployed.
 
-- The ease that this separation can be accomplised depends on the discipline in maintaining boundaries / interfaces between responsibiity area.
+- The ease that this separation can be accomplised depends on the discipline in maintaining boundaries / interfaces between responsibiity areas.
 
 - Composable software allow easier growing of responsibilities.
 
